@@ -12,6 +12,8 @@ import org.apache.thrift.transport.TTransport;
 import org.apache.thrift.transport.TTransportException;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 public class ServiceHandlerTest {
     private static final int PORT = 9090;
     private static final String HOST = "localhost";

@@ -10,12 +10,12 @@ public class Server {
 
   public static ServiceHandler service;
 
-  public static Service.Processor<ServiceHandler> processor;
+  public static Service.Processor processor;
 
   public static void main(String[] args) {
     try {
       service = new ServiceHandler();
-      processor = new Service.Processor<ServiceHandler>(service);
+      processor = new Service.Processor(service);
 
       Runnable server = new Runnable() {
         public void run() {
@@ -29,7 +29,7 @@ public class Server {
     }
   }
 
-  public static void startServer(Service.Processor<ServiceHandler> processor) {
+  public static void startServer(Service.Processor processor) {
     try {
       TServerTransport serverTransport = new TServerSocket(9090);
       TServer server = new TSimpleServer(new Args(serverTransport).processor(processor));
